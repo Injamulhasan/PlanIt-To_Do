@@ -1,216 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Box Icons CSS -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>PlanIt-ToDo</title>
-  </head>
-  <body
-    class="bg-[#cfcfcf] flex flex-col items-center justify-center gap-4 h-screen"
-  >
-    <!-- header -->
-    <header
-      class="bg-white shadow-lg w-10/12 h-auto rounded-3xl flex flex-col sm:flex-row justify-between items-center p-5 m-7 md:w-3/6"
-    >
-      <h1 class="text-blue-600 font-bold text-[40px]">PlanIt</h1>
-      <a
-        class="bg-blue-600 py-2 px-4 text-white font-semibold rounded-2xl text-lg mt-4 flex items-center gap-2"
-        href="./add_task.html"
-        ><i class="bx bxs-plus-circle bx-sm"></i> Add New</a
-      >
-      <a
-        class="bg-red-600 py-2 px-4 text-white font-semibold rounded-2xl text-lg mt-4 flex items-center gap-2"
-        href="./add_task.html"
-        ><i class="bx bxs-plus-circle bx-sm"></i>Sign Out</a
-      >
-    </header>
-    <!-- Navigation Bar -->
-    <nav
-      class="bg-white transition-all-[1s] shadow-md w-10/12 rounded-2xl h-auto p-4 flex flex-row justify-around md:w-3/6"
-    >
-      <a
-        href="./index.html"
-        class="text-blue-400 transition duration-300 ease-out hover:ease-in hover:text-blue-500 font-semibold py-1 px-3 flex items-center gap-1"
-        ><i class="bx bxs-category"></i>All Tasks</a
-      >
-      <span class="text-gray-400">|</span>
-      <a
-        href="./completed.html"
-        class="font-semibold text-gray-400 py-1 px-3 flex items-center gap-1"
-        ><i class="bx bxs-badge-check"></i>Completed</a
-      >
-      <span class="text-gray-400">|</span>
-      <a
-        href="./remaining.html"
-        class="font-semibold text-gray-400 py-1 px-3 flex items-center gap-1"
-        ><i class="bx bxs-sad"></i>Todo</a
-      >
-      <span class="text-gray-400">|</span>
-      <a
-        href="./remaining.html"
-        class="font-semibold text-gray-400 py-1 px-3 flex items-center gap-1"
-        ><i class="bx bxs-calendar-week"></i>Weekly</a
-      >
-      <span class="text-gray-400">|</span>
-      <a
-        href="./remaining.html"
-        class="font-semibold text-gray-400 py-1 px-3 flex items-center gap-1"
-        ><i class="bx bxs-calendar-check"></i>Monthly</a
-      >
-    </nav>
-    <!-- Tasks -->
-    <section
-      class="flex flex-1 flex-wrap justify-center gap-3 bg-[#fff0] w-10/12 md:w-11/12 h-full mb-3 rounded-2xl p-3 overflow-y-auto scrollbar-hide"
-    >
-      <!-- Task card -->
-      <div
-        class="w-[355px] flex flex-col shadow-md bg-white h-[120px] rounded-xl p-3"
-      >
-        <!-- Top -->
-        <div class="flex flex-row justify-between">
-          <!-- Left: Title and Description -->
-          <div>
-            <a href="./task_detail.html">
-              <h1 class="text-green-500 font-semibold text-xl">
-                Create a ToDo App with Django
-              </h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position-shadows-sizing-spacing</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
+</head>
+<body>
+  <!-- nav -->
+  <nav class="navbar navbar-icon-top navbar-expand-xl navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">PlanIt</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">
+            <i class="fa fa-home"></i>
+            Home
+            <span class="sr-only">(current)</span>
             </a>
-            <p class="text-gray-500 text-md">
-              The app will contain the following...
-            </p>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fa fa-envelope-o">
+              <span class="badge badge-danger">11</span>
+            </i>
+            Link
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">
+            <i class="fa fa-envelope-o">
+              <span class="badge badge-warning">11</span>
+            </i>
+            Disabled
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-envelope-o">
+              <span class="badge badge-primary">11</span>
+            </i>
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
           </div>
-          <!-- Right: Toggle complete mode -->
-          <a href="">
-            <i class="bx bx-check-circle bx-sm text-blue-500"></i>
-            <!-- <i class='bx bxs-check-circle'></i> -->
+        </li>
+      </ul>
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fa fa-bell">
+              <span class="badge badge-info">11</span>
+            </i>
+            Test
           </a>
-        </div>
-        <!-- Line -->
-        <hr class="border-t border-gray-200 my-2" />
-        <!-- Bottom: Time and Date | Delete -->
-        <div class="flex flex-row justify-between">
-          <h2 class="text-gray-500 font-bold">
-            Due Today <span class="font-medium text-gray-400">12:00 pm</span>
-          </h2>
-          <a href="./delete.html">
-            <i class="bx bxs-trash bx-sm text-red-500"></i>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <i class="fa fa-globe">
+              <span class="badge badge-success">11</span>
+            </i>
+            Test
           </a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <!-- add-task -->
+  <div class="container mt-5">
+    <div class="form-container bg-white">
+      <h1 class="text-center  font-weight-bold badge-primary text-white" id="add">Add Plans</h1>
+      <!-- Task Form -->
+      <form>
+        <div class="form-group">
+          <label for="task-name">Task Name</label>
+          <input type="text" class="form-control" id="task-name" placeholder="Enter task name" required>
         </div>
-      </div>
-      <!-- Task card -->
-      <div
-        class="w-[355px] flex flex-col shadow-md bg-white h-[120px] rounded-xl p-3"
-      >
-        <!-- Top -->
-        <div class="flex flex-row justify-between">
-          <!-- Left: Title and Description -->
-          <div>
-            <a href="./task_detail.html">
-              <h1 class="text-green-500 font-semibold text-xl">
-                Create a ToDo App with Django
-              </h1>
-            </a>
-            <p class="text-gray-500 text-md">
-              The app will contain the following...
-            </p>
+        <div class="form-group">
+          <label for="task-description">Task Description</label>
+          <textarea class="form-control" id="task-description" rows="3" placeholder="Enter task description"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="due-date">Due Date</label>
+            <input type="date" class="form-control" id="due-date" required>
           </div>
-          <!-- Right: Toggle complete mode -->
-          <a href="">
-            <i class="bx bx-check-circle bx-sm text-blue-500"></i>
-            <!-- <i class='bx bxs-check-circle'></i> -->
-          </a>
-        </div>
-        <!-- Line -->
-        <hr class="border-t border-gray-200 my-2" />
-        <!-- Bottom: Time and Date | Delete -->
-        <div class="flex flex-row justify-between">
-          <h2 class="text-gray-500 font-bold">
-            Due Today <span class="font-medium text-gray-400">12:00 pm</span>
-          </h2>
-          <a href="./delete.html">
-            <i class="bx bxs-trash bx-sm text-red-500"></i>
-          </a>
-        </div>
-      </div>
-      <!-- Task card -->
-      <div
-        class="w-[355px] flex flex-col shadow-md bg-white h-[120px] rounded-xl p-3"
-      >
-        <!-- Top -->
-        <div class="flex flex-row justify-between">
-          <!-- Left: Title and Description -->
-          <div>
-            <a href="./task_detail.html">
-              <h1 class="text-green-500 font-semibold text-xl">
-                Create a ToDo App with Django
-              </h1>
-            </a>
-            <p class="text-gray-500 text-md">
-              The app will contain the following...
-            </p>
+          <div class="form-group col-md-6">
+            <label for="due-time">Due Time</label>
+            <input type="time" class="form-control" id="due-time" required>
           </div>
-          <!-- Right: Toggle complete mode -->
-          <a href="">
-            <i class="bx bx-check-circle bx-sm text-blue-500"></i>
-            <!-- <i class='bx bxs-check-circle'></i> -->
-          </a>
         </div>
-        <!-- Line -->
-        <hr class="border-t border-gray-200 my-2" />
-        <!-- Bottom: Time and Date | Delete -->
-        <div class="flex flex-row justify-between">
-          <h2 class="text-gray-500 font-bold">
-            Due Today <span class="font-medium text-gray-400">12:00 pm</span>
-          </h2>
-          <a href="./delete.html">
-            <i class="bx bxs-trash bx-sm text-red-500"></i>
-          </a>
-        </div>
-      </div>
-      <!-- Task card -->
-      <div
-        class="w-[355px] flex flex-col shadow-md bg-white h-[120px] rounded-xl p-3"
-      >
-        <!-- Top -->
-        <div class="flex flex-row justify-between">
-          <!-- Left: Title and Description -->
-          <div>
-            <a href="./task_detail.html">
-              <h1 class="text-green-500 font-semibold text-xl">
-                Create a ToDo App with Django
-              </h1>
-            </a>
-            <p class="text-gray-500 text-md">
-              The app will contain the following...
-            </p>
-          </div>
-          <!-- Right: Toggle complete mode -->
-          <a href="">
-            <i class="bx bx-check-circle bx-sm text-blue-500"></i>
-            <!-- <i class='bx bxs-check-circle'></i> -->
-          </a>
-        </div>
-        <!-- Line -->
-        <hr class="border-t border-gray-200 my-2" />
-        <!-- Bottom: Time and Date | Delete -->
-        <div class="flex flex-row justify-between">
-          <h2 class="text-gray-500 font-bold">
-            Due Today <span class="font-medium text-gray-400">12:00 pm</span>
-          </h2>
-          <a href="./delete.html">
-            <i class="bx bxs-trash bx-sm text-red-500"></i>
-          </a>
-        </div>
-      </div>
-    </section>
 
-    <!-- Box Icons -->
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-  </body>
+        <div class="row">
+          <div class="col-sm-12 p-4 m-2 text-center">
+              <button id="btnSearch" class="btn btn-primary btn-md center-block" style="width: 100px;" onClick="btnSearch_Click" >High</button>
+               <button id="btnClear" class="btn btn-danger btn-md center-block" style="width: 100px;" onClick="btnClear_Click" >Middle
+              </button>
+               <button id="btnClea" class="btn btn-success btn-md center-block" style="width: 100px;" onClick="btnClear_Click" >Low
+              </button>
+           </div>
+      </div>
+   
+        <button type="submit" class="btn btn-primary btn-block">Create Task</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Hero section -->
+  <section class="vh-100 gradient-custom-2">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-12 col-xl-10">
+  
+          <div class="card mask-custom">
+            <div class="card-body p-4 text-white">
+  
+              <div class="text-center pt-3 pb-2">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp"
+                  alt="Check" width="60">
+                <h2 class="my-4">Task List</h2>
+              </div>
+  
+              <table class="table text-white mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col">Team Member</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="fw-normal">
+                    <th>
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                        alt="avatar 1" style="width: 45px; height: auto;">
+                      <span class="ms-2">Alice Mayer</span>
+                    </th>
+                    <td class="align-middle">
+                      <span>Call Sam For payments</span>
+                    </td>
+                    <td class="align-middle">
+                      <h6 class="mb-0"><span class="badge bg-danger">High priority</span></h6>
+                    </td>
+                    <td class="align-middle">
+                      <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
+                          class="fas fa-check fa-lg text-success me-3"></i></a>
+                      <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
+                          class="fas fa-trash-alt fa-lg text-warning"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="fw-normal">
+                    <th>
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp"
+                        alt="avatar 1" style="width: 45px; height: auto;">
+                      <span class="ms-2">Kate Moss</span>
+                    </th>
+                    <td class="align-middle">Make payment to Bluedart</td>
+                    <td class="align-middle">
+                      <h6 class="mb-0"><span class="badge bg-success">Low priority</span></h6>
+                    </td>
+                    <td class="align-middle">
+                      <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
+                          class="fas fa-check fa-lg text-success me-3"></i></a>
+                      <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
+                          class="fas fa-trash-alt fa-lg text-warning"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="fw-normal">
+                    <th>
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
+                        alt="avatar 1" style="width: 45px; height: auto;">
+                      <span class="ms-2">Danny McChain</span>
+                    </th>
+                    <td class="align-middle">Office rent</td>
+                    <td class="align-middle">
+                      <h6 class="mb-0"><span class="badge bg-warning">Middle priority</span></h6>
+                    </td>
+                    <td class="align-middle">
+                      <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
+                          class="fas fa-check fa-lg text-success me-3"></i></a>
+                      <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
+                          class="fas fa-trash-alt fa-lg text-warning"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="fw-normal">
+                    <th>
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava5-bg.webp"
+                        alt="avatar 1" style="width: 45px; height: auto;">
+                      <span class="ms-2">Alexa Chung</span>
+                    </th>
+                    <td class="align-middle">Office grocery shopping</td>
+                    <td class="align-middle">
+                      <h6 class="mb-0"><span class="badge bg-danger">High priority</span></h6>
+                    </td>
+                    <td class="align-middle">
+                      <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
+                          class="fas fa-check fa-lg text-success me-3"></i></a>
+                      <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
+                          class="fas fa-trash-alt fa-lg text-warning"></i></a>
+                    </td>
+                  </tr>
+                  <tr class="fw-normal">
+                    <th class="border-0">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp"
+                        alt="avatar 1" style="width: 45px; height: auto;">
+                      <span class="ms-2">Ben Smith</span>
+                    </th>
+                    <td class="border-0 align-middle">Ask for Lunch to Clients</td>
+                    <td class="border-0 align-middle">
+                      <h6 class="mb-0"><span class="badge bg-success">Low priority</span></h6>
+                    </td>
+                    <td class="border-0 align-middle">
+                      <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
+                          class="fas fa-check fa-lg text-success me-3"></i></a>
+                      <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
+                          class="fas fa-trash-alt fa-lg text-warning"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+  
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
 </html>
