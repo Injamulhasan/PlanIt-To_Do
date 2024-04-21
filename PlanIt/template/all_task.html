@@ -177,7 +177,7 @@
           $(".add-new").attr("disabled", "disabled");
         });
         // Delete row on delete button click
-        $(document).on("click", ".delete", function () {
+        $(document).on("click", ".check_circle", function () {
           $(this).parents("tr").remove();
           $(".add-new").removeAttr("disabled");
         });
@@ -274,7 +274,6 @@
         <table class="table table-bordered">
           <thead>
             <tr>
-              <th>Status</th>
               <th>Task Name</th>
               <th>Catagory</th>
               <th>Priority</th>
@@ -283,7 +282,6 @@
           </thead>
           <tbody>
             <tr>
-              <td><span class="status text-success">&bull;</span> Active</td>
               <td>Kickoff meeting</td>
               <td>Weekly</td>
               <td>Mid</td>
@@ -295,14 +293,13 @@
                 <a class="edit" title="Edit" data-toggle="tooltip"
                   ><i class="material-icons">&#xE254;</i></a
                 >
-                <a class="delete" title="Delete" data-toggle="tooltip"
-                  ><i class="material-icons">&#xE872;</i></a
+                <a class="check_circle" title="Delete" data-toggle="tooltip"
+                  ><i class="material-icons">&#xE86C;</i></a
                 >
               </td>
             </tr>
 
             <tr>
-              <td><span class="status text-danger">&bull;</span> Suspended</td>                        
               <td>Ask for Lunch to Clients</td>
               <td>Weekly</td>
               <td>Low</td>
@@ -313,15 +310,13 @@
                 <a class="edit" title="Edit" data-toggle="tooltip"
                   ><i class="material-icons">&#xE254;</i></a
                 >
-                <a class="delete" title="Delete" data-toggle="tooltip"
-                  ><i class="material-icons">&#xE872;</i></a
+                <a class="check_circle" title="Delete" data-toggle="tooltip"
+                  ><i class="material-icons">&#xE86C;</i></a
                 >
               </td>
             </tr>
 
-          
             <tr>
-              <td><span class="status text-success">&bull;</span> Active</td>
               <td>Office grocery shopping</td>
               <td>Weekly</td>
               <td>Mid</td>
@@ -332,13 +327,12 @@
                 <a class="edit" title="Edit" data-toggle="tooltip"
                   ><i class="material-icons">&#xE254;</i></a
                 >
-                <a class="delete" title="Delete" data-toggle="tooltip"
-                  ><i class="material-icons">&#xE872;</i></a
+                <a class="check_circle" title="Delete" data-toggle="tooltip"
+                  ><i class="material-icons">&#xE86C;</i></a
                 >
               </td>
             </tr>
             <tr>
-              <td><span class="status text-success">&bull;</span> Active</td>
               <td>Call Sam For payments</td>
               <td>Monthly</td>
               <td>High</td>
@@ -349,8 +343,8 @@
                 <a class="edit" title="Edit" data-toggle="tooltip"
                   ><i class="material-icons">&#xE254;</i></a
                 >
-                <a class="delete" title="Delete" data-toggle="tooltip"
-                  ><i class="material-icons">&#xE872;</i></a
+                <a class="check_circle" title="Delete" data-toggle="tooltip"
+                  ><i class="material-icons">&#xE86C;</i></a
                 >
               </td>
             </tr>
