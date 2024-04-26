@@ -16,8 +16,6 @@
       rel="stylesheet"
       id="bootstrap-css"
     />
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -53,7 +51,7 @@
           <li class="nav-item">
             <a class="nav-link" href="all_task.html">
               <i class="fa fa-tasks"> </i>
-              All Task
+              AllTask
             </a>
           </li>
           <li class="nav-item">
@@ -89,7 +87,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.html">
+            <a class="nav-link" href="/logout">
               <i class="fa fa-sign-out"> </i>
               Sign Out
             </a>
@@ -97,101 +95,82 @@
         </ul>
       </div>
     </nav>
+    <!-- add-task -->
+    <div class="container mt-5">
+      <div class="form-container bg-white">
+        <h1
+          class="text-center font-weight-bold badge-primary text-white"
+          id="add"
+        >
+          Add Plans
+        </h1>
+        <!-- Task Form -->
+        <form>
+          <div class="form-group">
+            <label for="task-name">Task Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="task-name"
+              placeholder="Enter task name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="task-description">Task Description</label>
+            <textarea
+              class="form-control"
+              id="task-description"
+              rows="3"
+              placeholder="Enter task description"
+            ></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="due-date">Due Date</label>
+              <input type="date" class="form-control" id="due-date" required />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="due-time">Due Time</label>
+              <input type="time" class="form-control" id="due-time" required />
+            </div>
+          </div>
 
-    <section class="section about-section gray-bg" id="about">
-      <div class="container">
-        <div class="row align-items-center flex-row-reverse">
-          <div class="col-lg-6">
-            <div class="about-text go-to">
-              <h3 class="dark-color">Injamul Hasan</h3>
-              <h6 class="theme-color lead">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </h6>
-              <p>
-                Lorem <mark>Lorem ipsum dolor.</mark> Lorem ipsum, dolor sit
-                amet consectetur adipisicing elit. Maxime iure, obcaecati porro
-                velit nobis quasi.
-              </p>
-              <div class="row about-list">
-                <div class="col-md-6">
-                  <div class="media">
-                    <label>UID</label>
-                    <p>18301257</p>
-                  </div>
-                  <div class="media">
-                    <label>Age</label>
-                    <p>23 Yr</p>
-                  </div>
-                  <div class="media">
-                    <label>Residence</label>
-                    <p>Bangladesh</p>
-                  </div>
-                  <div class="media">
-                    <label>Address</label>
-                    <p>Dhanmondi , Dhaka</p>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="media">
-                    <label>E-mail</label>
-                    <p>123@gmail.com</p>
-                  </div>
-                  <div class="media">
-                    <label>Phone</label>
-                    <p>+880165757860</p>
-                  </div>
-                  <div class="media">
-                    <label>Skype</label>
-                    <p>skype.000</p>
-                  </div>
-                  <div class="media">
-                    <label>Birthday</label>
-                    <p>4th april 1998</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="about-avatar">
-              <img
-                src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                title=""
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-        <div class="counter">
           <div class="row">
-            <div class="col-6 col-lg-3">
-              <div class="count-data text-center">
-                <h6 class="count h2" data-to="500" data-speed="500">0</h6>
-                <p class="m-0px font-w-600">Total Tasks</p>
-              </div>
-            </div>
-            <div class="col-6 col-lg-3">
-              <div class="count-data text-center">
-                <h6 class="count h2" data-to="150" data-speed="150">0</h6>
-                <p class="m-0px font-w-600">Task Completed</p>
-              </div>
-            </div>
-            <div class="col-6 col-lg-3">
-              <div class="count-data text-center">
-                <h6 class="count h2" data-to="850" data-speed="850">0</h6>
-                <p class="m-0px font-w-600">Task Pending</p>
-              </div>
-            </div>
-            <div class="col-6 col-lg-3">
-              <div class="count-data text-center">
-                <h6 class="count h2" data-to="190" data-speed="190">0</h6>
-                <p class="m-0px font-w-600">Incompleted Task</p>
-              </div>
+            <div class="col-sm-12 p-4 m-2 text-center">
+              <button
+                id="btnSearch"
+                class="btn btn-primary btn-md center-block"
+                style="width: 100px"
+                onClick="btnSearch_Click"
+              >
+                High
+              </button>
+              <button
+                id="btnClear"
+                class="btn btn-danger btn-md center-block"
+                style="width: 100px"
+                onClick="btnClear_Click"
+              >
+                Middle
+              </button>
+              <button
+                id="btnClea"
+                class="btn btn-success btn-md center-block"
+                style="width: 100px"
+                onClick="btnClear_Click"
+              >
+                Low
+              </button>
             </div>
           </div>
-        </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            Create Task
+          </button>
+        </form>
       </div>
-    </section>
+    </div>
 
     <br /><br />
 
@@ -211,7 +190,7 @@
               <div class="copywrite-text mb-5">
                 <p class="mb-0">
                   Made <i class="lni-heart mr-1"></i>by Group 4 -<a class="ml-1"
-                    >Akash Abhra Anwar Ajmain Abdullah</a
+                    >Akash Saumyadeep Anwar Ajmain Abdullah</a
                   >
                 </p>
               </div>
