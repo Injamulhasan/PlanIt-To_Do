@@ -2,7 +2,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .models import Task
+
+from authentication.forms import TeamForm
+from .models import Team, Task
 
 
 def handlelogin(request):
@@ -46,7 +48,7 @@ def signup(request):
 
 def all_tasks(request):
     todos = Task.objects.all()
-    # print(type(todos[0].id))
+    print(type(todos[0].id))
     return render(request, 'all_task.html', {'todos': todos})
 
 def add_task(request):
@@ -74,22 +76,53 @@ def change_status_completed(request,id):
     todo.status=True
     todo.save()
     return render(request, 'all_task.html', {'todos': todos})
-
 def weekly_task(request):
-    # Fetch all tasks with priority set to "weekly"
     weekly_tasks = Task.objects.filter(priority='weekly')
     return render(request, 'weekly.html', {'weekly_tasks': weekly_tasks})
 
 def monthly_task(request):
-    # Fetch all tasks with priority set to "monthly"
     monthly_tasks = Task.objects.filter(priority='monthly')
     return render(request, 'monthly.html', {'monthly_tasks': monthly_tasks})
 
 def completed_tasks(request):
-    # Query the database to get completed tasks
     completed_tasks = Task.objects.filter(status=False)
-
-    # Pass the completed tasks to the template
     return render(request, 'completed.html', {'completed_tasks': completed_tasks})
+def user_profile(request):
+    user = request.user
+    task_count = Task.objects.filter(user=user).count()
+    return render(request, 'testPlanIt/templates/testPlanIt/user.html', {'task_count': task_count})
 
+def create_team(request):
+    if request.method == 'POST':
+        form = TeamForm(request.POST)
+        if form.is_valid():
+            group = form.save(commit=False)
+            group.save()
+            group.members.add(request.user)
+            return redirect('group_detail', pk=group.pk)
+    
+    else:
+        form = TeamForm()
+    return render(request, 'team.html', {'form':form})
 
+def team(request):
+    return render(request, 'team.html')
+
+def team_detail(request, pk):
+    group = Team.objects.get(pk=pk)
+    return render(request, 'teamdash.html', {'group': group})
+
+def join_team(request, pk):
+    group = Team.objects.get(pk=pk)
+    group.members.add(request.user)
+    return redirect('group_detail', pk=pk)
+
+def user_profile(request):
+    user_groups = request.user.groups.all()
+    return render(request, 'user.html', {'user_groups': user_groups})
+
+def user(request):
+    return render(request, 'user.html')
+
+def teamdash(request):
+    return render(request, 'teamdash.html')

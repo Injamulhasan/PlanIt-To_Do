@@ -16,5 +16,8 @@ urlpatterns = [
     path('wk/', views.weekly_task, name = 'week'),
     path('mn/', views.monthly_task, name = 'month'),
     path('cmp/', views.completed_tasks, name = 'completed'),
+    path('team/', views.team, name = 'team'),
+    path('teamdash/', views.teamdash, name = 'teamdash'),
+    path('user/', views.user, name = 'user'),
 ]
 
